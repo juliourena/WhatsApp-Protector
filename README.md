@@ -72,15 +72,15 @@ Crear un perfil de Firefox, en la consola (bash) poner lo siguiente:
  
 `firefox -p`
  
-*Crear Perfil
-*Seleccionar un nombre
-*Elegir el directorio (Crear un directorio donde se vayan a guardar los registros de Firefox)
-*Entrar a https://web.whatsapp.com y escanear el código QR
-*Entrar nuevamente a https://web.whatsapp.com y validar si la sesión persiste.
-*Finalizar.
+* Crear Perfil
+* Seleccionar un nombre
+* Elegir el directorio (Crear un directorio donde se vayan a guardar los registros de Firefox)
+* Entrar a https://web.whatsapp.com y escanear el código QR
+* Entrar nuevamente a https://web.whatsapp.com y validar si la sesión persiste.
+* Finalizar.
 
 
 ## Otras menciones:
--Agradecer a los chicos de la Iglesia de Dios Central, por crear el escenario de la idea. :) 
--[rcompton](https://github.com/rcompton), utilicé su [Regex para URLs](https://github.com/rcompton/ryancompton.net/blob/master/assets/praw_drugs/urlmarker.py)
--[cmaddy](https://github.com/chrismaddalena) sus proyectos y codigo me dieron algunas ideas.
+- Agradecer a los chicos de la Iglesia de Dios Central, por crear el escenario de la idea.
+- [rcompton](https://github.com/rcompton), utilicé su [Regex para URLs](https://github.com/rcompton/ryancompton.net/blob/master/assets/praw_drugs/urlmarker.py)
+- [cmaddy](https://github.com/chrismaddalena) sus proyectos y codigo me dieron algunas ideas.
