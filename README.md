@@ -95,11 +95,11 @@ Para ejecutar la protección solo sería, recuerden que la -t es opcional 😊
 
 `python3 whatsapp-protector.py -d /home/plaintext/dev/plaintext-profile -c 18000070508-1500082004@g.us -t 120`
 
-![whatsapp-protector-busqueda](/assets/images/ws-protector.png)
+![whatsapp-protector-busqueda](https://raw.githubusercontent.com/juliourena/juliourena.github.io/master/assets/images/ws-protector.png)
 
 Y así se vería en el Whatsapp 😊
 
-![whatsapp-protector-action](/assets/images/whatsapp-action.png)
+![whatsapp-protector-action](https://raw.githubusercontent.com/juliourena/juliourena.github.io/master/assets/images/whatsapp-action.png)
 
 ## Otras menciones:
 - Agradecer a los chicos de la Iglesia de Dios Central, por crear el escenario de la idea.
