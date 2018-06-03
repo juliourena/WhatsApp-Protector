@@ -40,11 +40,11 @@ def Conexion(directorio):
 		print("[-] No se pudo conectar, intente otra vez.")
 		return False
 
-def Protector(chat_id, timeout=False):
+def Protector(chat_id, timeout=0):
 	try:
 		#driver.send_message_to_id(chat_id, '[+] Protección de Chat Iniciada. \n'+ time.ctime())
 		while True:
-			if timeout and (time.time() > timeout):
+			if timeout > 0 and (time.time() > timeout):
 				break
 			# Buscará cada 3 segundos por mensajes nuevos.
 			time.sleep(3)
@@ -129,9 +129,9 @@ def main(self, chat_id, buscar_nombre, directorio, tiempo):
 		
 	if Conexion(directorio):
 		if (chat_id):			
-			timeout = time.time() + int(tiempo)
+			timeout = time.time() + tiempo
 			print("[+] Iniciando Protección [" + time.ctime() + "]")
-			if int(tiempo) > 0:
+			if tiempo > 0:
 				Protector(chat_id, timeout)
 			else:
 				Protector(chat_id)
