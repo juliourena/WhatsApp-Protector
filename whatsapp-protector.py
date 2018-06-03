@@ -40,8 +40,9 @@ def Conexion(directorio):
 		print("[-] No se pudo conectar, intente otra vez.")
 		return False
 
-def Protector(chat_id, timeout):
+def Protector(chat_id, timeout=False):
 	try:
+		#driver.send_message_to_id(chat_id, '[+] Protección de Chat Iniciada. \n'+ time.ctime())
 		while True:
 			if timeout and (time.time() > timeout):
 				break
@@ -74,9 +75,12 @@ def Protector(chat_id, timeout):
 									driver.send_message_to_id(message.chat_id, 'El enlace ('+ url +') está categorizado como: *' + category +'*. \n\nNo es recomendable visitar este enlace. ')
 								else:
 									driver.send_message_to_id(message.chat_id, 'El enlace ('+ url +') está categorizado como: *' + category +'*. \n\nNo se evidencia peligro en la categoría. ')
+									
+		#driver.send_message_to_id(chat_id, '[-] Protección de Chat Finalizada. \n'+ time.ctime())
 	except Exception as e:
 		print("[-] Type error: " + str(e))
 		print(traceback.format_exc())
+		driver.send_message_to_id(chat_id, '[-] Protección de Chat Finalizada. \n'+ time.ctime())
 		
 def Busqueda(nombre):
 	global driver
@@ -107,7 +111,7 @@ def print_help(self, param, value):
 @click.option('-c', '--chat-id', 'chat_id', help='Chat_Id para Revisar Mensajes Nuevos', required=False)
 @click.option('-b', '--buscar', 'buscar_nombre', help='Buscar el chat_id basado en el nombre', required=False)
 @click.option('-d', '--directorio', 'directorio',default='/tmp', help='Directorio para grabar la sesion', required=False)
-@click.option('-t', '--tiempo', 'tiempo', help='Segundos que durará la ejecución. Si no se establece el programa correrá indefinidamente.', required=False)
+@click.option('-t', '--tiempo', 'tiempo', type=int, default=0,help='Segundos que durará la ejecución. Si no se establece el programa correrá indefinidamente.', required=False)
 @click.option('-h', '--help', 'help', help='Ayuda', is_flag=True, callback=print_help, expose_value=False, is_eager=False)
 @click.pass_context
 
@@ -127,7 +131,10 @@ def main(self, chat_id, buscar_nombre, directorio, tiempo):
 		if (chat_id):			
 			timeout = time.time() + int(tiempo)
 			print("[+] Iniciando Protección [" + time.ctime() + "]")
-			Protector(chat_id, timeout)
+			if int(tiempo) > 0:
+				Protector(chat_id, timeout)
+			else:
+				Protector(chat_id)
 		else:
 			print("[+] Iniciando Busqueda [" + time.ctime() + "]")
 			Busqueda(buscar_nombre)
