@@ -3,16 +3,16 @@
 
 """
 Desarrollador:	Julio Ureña "PlainText"
-Blog:			http://plaintext.do
-Proyecto:		WhatsApp Protector
-Versión:		0.1
+Blog:		http://plaintext.do
+Proyecto:	WhatsApp Protector
+Versión:	0.1
 Descripción:	Es un proyecto que tiene la intención de ayudar a los usuarios 
-				a identificar cuando un enlace enviado por WhatsApp es sospechoso.
-				Permitiendo evitar que estos sean víctimas de [Ingeniería Social].
+		a identificar cuando un enlace enviado por WhatsApp es sospechoso.
+		Permitiendo evitar que estos sean víctimas de [Ingeniería Social].
 				
-				De igual forma, mostrar cómo se puede utilizar WhatsAPIDriver, para
-				aquellos desarrolladores que quieran probar otras cosas utilizando 
-				esta herramienta como base o guía.
+		De igual forma, mostrar cómo se puede utilizar WhatsAPIDriver, para
+		aquellos desarrolladores que quieran probar otras cosas utilizando 
+		esta herramienta como base o guía.
 """
 
 import time, re, requests, click, traceback
