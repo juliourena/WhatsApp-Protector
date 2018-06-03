@@ -85,7 +85,7 @@ Para buscar el chat_id utilizamos:
 
 `python3 whatsapp-protector.py -d /home/plaintext/dev/plaintext-profile -b vitilla`
 
-![whatsapp-protector-busqueda](/assets/images/ws-busqueda.png)
+![whatsapp-protector-busqueda](https://raw.githubusercontent.com/juliourena/juliourena.github.io/master/assets/images/ws-busqueda.png)
 
 Y ya tenemos el chat_id de dos conversaciones que tienen el nombre **vitilla**
 
