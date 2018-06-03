@@ -79,8 +79,35 @@ Crear un perfil de Firefox, en la consola (bash) poner lo siguiente:
 * Entrar nuevamente a https://web.whatsapp.com y validar si la sesión persiste.
 * Finalizar.
 
+# Búsqueda de Chat_id
+
+Para buscar el chat_id utilizamos:
+
+`python3 whatsapp-protector.py -d /home/plaintext/dev/plaintext-profile -b vitilla`
+
+![whatsapp-protector-busqueda](/assets/images/ws-busqueda.png)
+
+Y ya tenemos el chat_id de dos conversaciones que tienen el nombre **vitilla**
+
+# Protección de Chat
+
+Para ejecutar la protección solo sería, recuerden que la -t es opcional 😊
+
+`python3 whatsapp-protector.py -d /home/plaintext/dev/plaintext-profile -c 18000070508-1500082004@g.us -t 120`
+
+![whatsapp-protector-busqueda](/assets/images/ws-protector.png)
+
+Y así se vería en el Whatsapp 😊
+
+![whatsapp-protector-action](/assets/images/whatsapp-action.png)
 
 ## Otras menciones:
 - Agradecer a los chicos de la Iglesia de Dios Central, por crear el escenario de la idea.
 - [rcompton](https://github.com/rcompton), utilicé su [Regex para URLs](https://github.com/rcompton/ryancompton.net/blob/master/assets/praw_drugs/urlmarker.py)
 - [cmaddy](https://github.com/chrismaddalena) sus proyectos y codigo me dieron algunas ideas.
+
+Espero que les sea útil, cualquier duda o sugerencia no duden en escribir.
+
+**El servir a Cristo, no es una tarea, sino una relación. Amigos de Dios. Jn 15:15**
+ 
+Dios les bendiga!
