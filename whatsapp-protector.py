@@ -56,25 +56,30 @@ def Protector(chat_id, timeout=0):
 						# Imprimir en la consola (Aquí podrías incluso guardar esta información en una base de datos.
 						print('')
 						print('[+] Enviado por: ', message.sender)
-						print('[+] Mensaje: ', message.content)
+						if message.type == 'chat':
+							print('[+] Mensaje: ', message.content)
+
+							# Buscar dentro del mensaje de texto las URLs
+							urls = re.findall(regex,message.content)
+							if len(urls) >= 1:
+								for url in urls:
+									print("[+] Consultando la categoría de la URL en FortiGuard")
+									# Consultar FortiGuard para saber la categoria a la que pertenece la pagina.
+									r = requests.get('https://fortiguard.com/webfilter?q=' + url)
+									
+									# Extraer la categoría de Fortguard
+									category = re.findall("Category: (.*) />",r.text)[0].replace("\"","")
+									print("[+] La Categoría es: " + category + "\n\r")
+									
+									# Definir el mensaje a responder segun la categoría.
+									if category in warning:
+										driver.send_message_to_id(message.chat_id, 'El enlace ('+ url +') está categorizado como: *' + category +'*. \n\nNo es recomendable visitar este enlace. ')
+									#else:
+										#driver.send_message_to_id(message.chat_id, 'El enlace ('+ url +') está categorizado como: *' + category +'*. \n\nNo se evidencia peligro en la categoría. ')							
+						else:
+							print('[-] No link in Message type: ', message.type)
 						
-						# Buscar dentro del mensaje de texto las URLs
-						urls = re.findall(regex,message.content)
-						if len(urls) >= 1:
-							for url in urls:
-								print("[+] Consultando la categoría de la URL en FortiGuard")
-								# Consultar FortiGuard para saber la categoria a la que pertenece la pagina.
-								r = requests.get('https://fortiguard.com/webfilter?q=' + url)
-								
-								# Extraer la categoría de Fortguard
-								category = re.findall("Category: (.*) />",r.text)[0].replace("\"","")
-								print("[+] La Categoría es: " + category + "\n\r")
-								
-								# Definir el mensaje a responder segun la categoría.
-								if category in warning:
-									driver.send_message_to_id(message.chat_id, 'El enlace ('+ url +') está categorizado como: *' + category +'*. \n\nNo es recomendable visitar este enlace. ')
-								else:
-									driver.send_message_to_id(message.chat_id, 'El enlace ('+ url +') está categorizado como: *' + category +'*. \n\nNo se evidencia peligro en la categoría. ')
+						
 									
 		#driver.send_message_to_id(chat_id, '[-] Protección de Chat Finalizada. \n'+ time.ctime())
 	except Exception as e:
