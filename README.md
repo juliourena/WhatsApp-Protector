@@ -1,6 +1,7 @@
 # WhatsApp-Protector
 
 Para más información verificar el post: http://plaintext.do/Whatsapp-Protector/
+[for English README](/README-English)
 
 # ¿Qué es WhatsApp Protector?
 
