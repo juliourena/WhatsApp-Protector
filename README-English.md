@@ -24,12 +24,13 @@ It is necessary to install webwhatsapi the installation details can be found in 
 sudo apt install python3
 sudo apt install python3-pip
 pip3 install webwhatsapi
+pip3 install click
 
 # Installation of geckodriver
 wget https://github.com/mozilla/geckodriver/releases/download/v0.20.1/geckodriver-v0.20.1-linux64.tar.gz
 tar -xvzf geckodriver-v0.20.1-linux64.tar.gz
 chmod + x geckodriver
-sudo mv ./geckodriver / usr / local / bin /.
+sudo mv ./geckodriver /usr/local/bin/.
 ```
  
 # Use
